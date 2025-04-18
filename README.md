@@ -1,5 +1,5 @@
 # Screenshot & Sharing 
-Following best practices, I developed this demo. You just need to review [this commit]([https://link-url-here.org](https://github.com/MostafaAnter/ComposeShot/commit/5ea36e1359c15347a631920250424a65a6a3a4ae)).
+Following best practices, I developed this demo. You just need to review [this commit](https://link-url-here.org](https://github.com/MostafaAnter/ComposeShot/commit/5ea36e1359c15347a631920250424a65a6a3a4ae).
 
 
 # Approaches for Jetpack Compose: Comparison
