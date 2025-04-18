@@ -1,5 +1,6 @@
 # Screenshot & Sharing 
 Following best practices, I developed this demo. You just need to review [this commit](https://github.com/MostafaAnter/ComposeShot/commit/5ea36e1359c15347a631920250424a65a6a3a4ae).
+
 <img src="https://github.com/MostafaAnter/ComposeShot/blob/master/Screen_recording_20250418_044723.gif" width="350">
 
 # Approaches for Jetpack Compose: Comparison
