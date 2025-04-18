@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -39,14 +40,31 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeShotTheme {
-                WeatherHeader(
-                    city = "New York",
-                    date = "Thursday, April 18",
-                    temperature = "23°C",
-                    weatherDescription = "Partly Cloudy",
-                    weatherIconRes = R.drawable.ic_cloudy,
-                    backgroundImageRes = R.drawable.bg_sky
-                )
+                Box(){
+                    WeatherHeader(
+                        city = "New York",
+                        date = "Thursday, April 18",
+                        temperature = "23°C",
+                        weatherDescription = "Partly Cloudy",
+                        weatherIconRes = R.drawable.ic_cloudy,
+                        backgroundImageRes = R.drawable.bg_sky
+                    )
+
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(250.dp)
+                            .padding(16.dp),
+                        contentAlignment = Alignment.BottomEnd
+                    ) {
+                        ShareRoundButton(
+                            onClick = {
+                                // Handle share action
+                            }
+                        )
+                    }
+                }
+
             }
         }
     }
@@ -133,20 +151,20 @@ class MainActivity : ComponentActivity() {
     ) {
         IconButton(
             onClick = onClick,
-            modifier = Modifier.size(56.dp) // Round button size
+            modifier = Modifier.size(32.dp) // Round button size
         ) {
             Surface(
-                shape = MaterialTheme.shapes.extraLarge,
-                color = MaterialTheme.colorScheme.primary,
+                shape = MaterialTheme.shapes.small,
+                color = Color.White,
                 tonalElevation = 4.dp
             ) {
                 Icon(
                     imageVector = Icons.Default.Share,
                     contentDescription = "Share",
-                    tint = MaterialTheme.colorScheme.onPrimary,
+                    tint = Color.Black,
                     modifier = Modifier
-                        .size(56.dp)
-                        .padding(16.dp) // Inner padding for the icon
+                        .size(32.dp)
+                        .padding(8.dp) // Inner padding for the icon
                 )
             }
         }
