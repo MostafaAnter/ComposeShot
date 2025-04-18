@@ -29,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -40,6 +41,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeShotTheme {
+                val context = LocalContext.current
                 Box(){
                     WeatherHeader(
                         city = "New York",
@@ -60,6 +62,20 @@ class MainActivity : ComponentActivity() {
                         ShareRoundButton(
                             onClick = {
                                 // Handle share action
+                                ComposableShotsUtil.captureAndShare(
+                                    context = context,
+                                    content = {
+                                        WeatherHeader(
+                                            city = "New York",
+                                            date = "Thursday, April 18",
+                                            temperature = "23°C",
+                                            weatherDescription = "Partly Cloudy",
+                                            weatherIconRes = R.drawable.ic_cloudy,
+                                            backgroundImageRes = R.drawable.bg_sky
+                                        )
+                                    },
+                                    title = "Check out my app!"
+                                )
                             }
                         )
                     }
